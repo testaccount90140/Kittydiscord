@@ -5,15 +5,10 @@ const { Client, GatewayIntentBits, PermissionsBitField, ChannelType } = require(
 //  CONFIG
 // ─────────────────────────────────────────────
 const CHANNEL_ID   = '1484915685875515396';   // ID du salon smash-or-pass
-const SLOW_MODE_S  = 30;                       // Mode lent : 30 secondes entre chaque post
+const SLOW_MODE_S  = 5;                       // Mode lent : 5 secondes entre chaque post
 
 const THREAD_WARNING = `# ⚠️ Respect avant tout
-> Tout propos méprisant, dévalorisant, insultant ou méchant envers cette personne est **strictement interdit** et entraînera une sanction immédiate.
-> 
-> ✅ **Smash** — tu valides
-> ❌ **Pass** — tu passes
-> 
-> Garde ton avis constructif et bienveillant. On est là pour s'amuser, pas pour blesser. 🙏`;
+> Tout propos méprisant, dévalorisant, insultant ou méchant envers cette personne est **strictement interdit** et entraînera une sanction immédiate.`;
 
 // Types MIME autorisés
 const ALLOWED_TYPES = ['image/', 'video/'];
