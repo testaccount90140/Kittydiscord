@@ -71,7 +71,19 @@ async function tryDM(user, text) {
 //  EVENTS
 // ─────────────────────────────────────────────
 
-client.once('ready', async () => {
+// ─────────────────────────────────────────────
+//  KEEPALIVE HTTP (Railway exige un port ouvert)
+// ─────────────────────────────────────────────
+const http = require('http');
+const PORT = process.env.PORT || 3000;
+http.createServer((_, res) => {
+    res.writeHead(200);
+    res.end('Bot en ligne ✅');
+}).listen(PORT, () => {
+    console.log(`🌐 Serveur keepalive sur le port ${PORT}`);
+});
+
+client.once('clientReady', async () => {
     console.log(`✅ Bot connecté en tant que ${client.user.tag}`);
 
     // Configure le mode lent sur le salon au démarrage
